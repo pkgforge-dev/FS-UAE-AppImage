@@ -14,7 +14,7 @@ export STARTUPWMCLASS=fs-uae-launcher
 export DEPLOY_OPENGL=1
 
 # Deploy dependencies
-quick-sharun  /usr/bin/fs-uae-launcher /usr/bin/fs-uae /usr/bin/fs-uae-device-helper /usr/lib/libopenal.so*
+quick-sharun  /usr/bin/fs-uae-launcher /usr/bin/fs-uae /usr/bin/fs-uae-device-helper /usr/share/fs-uae-launcher /usr/lib/libopenal.so*
 echo 'SHARUN_WORKING_DIR=${SHARUN_DIR}/bin' >> ./AppDir/.env
 
 # Turn AppDir into AppImage
