@@ -12,9 +12,12 @@ export ICON=https://raw.githubusercontent.com/FrodeSolheim/fs-uae-launcher/refs/
 export DESKTOP=https://raw.githubusercontent.com/FrodeSolheim/fs-uae-launcher/refs/heads/main/share/applications/fs-uae-launcher.desktop
 export STARTUPWMCLASS=fs-uae-launcher
 export DEPLOY_OPENGL=1
+export DEPLOY_PYTHON=1
 
 # Deploy dependencies
-quick-sharun  /usr/bin/fs-uae-launcher /usr/bin/fs-uae /usr/bin/fs-uae-device-helper /usr/share/fs-uae-launcher /usr/lib/libopenal.so*
+mkdir -p ./AppDir/bin
+cp -r /usr/share/fs-uae-launcher/* ./AppDir/bin
+quick-sharun ./AppDir/bin/* /usr/bin/fs-uae /usr/bin/fs-uae-device-helper /usr/lib/libopenal.so* /usr/lib/libQt6Gui.so*
 echo 'SHARUN_WORKING_DIR=${SHARUN_DIR}/bin' >> ./AppDir/.env
 
 # Turn AppDir into AppImage
